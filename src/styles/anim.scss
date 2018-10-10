@@ -1,0 +1,80 @@
+$mainDelay: 1000ms;
+$mainDuration: 1000ms;
+
+$wipeDelay: $mainDelay + $mainDuration;
+$wipeDuration: 1500ms;
+
+$slideFadeInStagger: 50ms;
+$slideFadeInDelay: $wipeDelay + (0.66 * $wipeDuration);
+$slideFadeInDuration: $wipeDuration;
+
+.main {
+  opacity: 1;
+  transition: opacity 500ms ease-out 1s;
+}
+
+@keyframes wipeInOut {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.title__text--overlay {
+  animation-delay: $wipeDelay;
+  animation-name: wipeInOut;
+  animation-direction: normal;
+  animation-duration: $wipeDuration;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+}
+
+.title__text--persistent {
+  animation-delay: $wipeDelay + (0.5 * $wipeDuration);
+  animation-name: wipeInOut;
+  animation-direction: normal;
+  animation-duration: $wipeDuration;
+  animation-fill-mode: both;
+  animation-iteration-count: 0.5;
+  animation-play-state: running;
+  animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+}
+
+.slideFadeIn {
+  animation-name: slideFadeIn;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-duration: $slideFadeInDuration;
+}
+
+@for $i from 1 through 10 {
+  $modifier: $i * $slideFadeInStagger;
+  $delay: $slideFadeInDelay + $modifier;
+
+  .slideFadeIn:nth-child(#{$i}) {
+    animation-delay: $delay;
+  }
+}

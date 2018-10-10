@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "freesansbold";
+  src: url("../fonts/freesansbold.woff2") format("woff2"),
+    url("../fonts/freesansbold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
