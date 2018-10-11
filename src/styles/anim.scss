@@ -1,9 +1,12 @@
+$slideElements: subtitle bio worked-on "projects__project:nth-of-type(1)"
+  "projects__project:nth-of-type(2)" "projects__project:nth-of-type(3)"
+  "projects__project:nth-of-type(4)" cta;
 $mainDelay: 0ms;
 $mainDuration: 1000ms;
 $wipeDelay: $mainDelay + $mainDuration;
 $wipeDuration: 2000ms;
-$slideFadeInStagger: 25ms;
-$slideFadeInDelay: $wipeDelay + (0.66 * $wipeDuration);
+$slideFadeInStagger: 50ms;
+$slideFadeInDelay: $wipeDelay + ((2 / 3) * $wipeDuration);
 $slideFadeInDuration: $wipeDuration;
 
 .main {
@@ -27,7 +30,7 @@ $slideFadeInDuration: $wipeDuration;
 
 @keyframes slideFadeIn {
   0% {
-    transform: translateX(-20px);
+    transform: translateX(-10%);
     opacity: 0;
   }
   100% {
@@ -58,21 +61,19 @@ $slideFadeInDuration: $wipeDuration;
   animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
 }
 
-.slideFadeIn {
-  animation-name: slideFadeIn;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-iteration-count: 1;
-  animation-play-state: running;
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-duration: $slideFadeInDuration;
-}
-
-@for $i from 1 through 10 {
-  $modifier: $i * $slideFadeInStagger;
+@for $i from 1 through length($slideElements) {
+  $element: nth($slideElements, $i);
+  $modifier: ($i - 1) * $slideFadeInStagger;
   $delay: $slideFadeInDelay + $modifier;
 
-  .slideFadeIn:nth-child(#{$i}) {
+  .#{$element} {
+    animation-name: slideFadeIn;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-duration: $slideFadeInDuration;
     animation-delay: $delay;
   }
 }

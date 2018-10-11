@@ -54,13 +54,13 @@
   font-size: 1.2em;
 }
 
-.work {
+.projects {
   padding: 0;
   list-style: none;
-}
 
-.work__entry {
-  margin-bottom: 8px;
+  &__project {
+    margin-bottom: 8px;
+  }
 }
 
 .link {
@@ -70,6 +70,8 @@
   background-color: #f8f8f8;
   font-weight: bold;
   transition: background-color 200ms ease-in-out;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 .link:hover {
