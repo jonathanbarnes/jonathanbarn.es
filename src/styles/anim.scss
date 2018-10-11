@@ -1,8 +1,8 @@
-$mainDelay: 1000ms;
+$mainDelay: 0ms;
 $mainDuration: 1000ms;
 $wipeDelay: $mainDelay + $mainDuration;
-$wipeDuration: 1500ms;
-$slideFadeInStagger: 50ms;
+$wipeDuration: 2000ms;
+$slideFadeInStagger: 25ms;
 $slideFadeInDelay: $wipeDelay + (0.66 * $wipeDuration);
 $slideFadeInDuration: $wipeDuration;
 
