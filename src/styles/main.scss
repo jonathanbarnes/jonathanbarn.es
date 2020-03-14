@@ -1,79 +1,34 @@
 @import "global";
-@import "anim";
 
-.main {
+body {
+  opacity: 1;
+}
+
+main {
+  font-family: "helvetica";
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 5vmin;
+  display: inline-block;
   display: flex;
-  min-height: 100%;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
 }
 
-.content {
-  width: 100%;
-  max-width: 1024px;
-  margin: auto;
-  padding: 1rem;
+p {
+  display: block;
+  line-height: 1;
+  margin: 0;
 }
 
-.title {
-  position: relative;
-  font-size: 3rem;
-  line-height: 3.5rem;
-  font-weight: normal;
-
-  &__text {
-    display: inline-block;
-    width: 100%;
-    max-width: 512px;
-    position: relative;
-    margin: 0 0 0 -6px;
-    padding: 6px;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    overflow: hidden;
-
-    &--overlay {
-      position: absolute;
-      background-color: #000;
-      color: #fff;
-    }
-
-    &--persistent::after {
-      height: 0;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 6px;
-      content: "";
-      border-top: 4px solid #000;
-    }
-  }
+span {
+  display: inline-block;
+  color: #f3f3f3;
+  cursor: pointer;
 }
 
-.subtitle {
-  font-size: 1.2em;
-}
-
-.projects {
-  padding: 0;
-  list-style: none;
-
-  &__project {
-    margin-bottom: 8px;
-  }
-}
-
-.link {
-  padding: 6px 4px;
-  text-decoration: none;
-  color: #000;
-  background-color: #f8f8f8;
-  font-weight: bold;
-  transition: background-color 200ms ease-in-out;
-  margin-left: -2px;
-  margin-right: -2px;
-}
-
-.link:hover {
-  background-color: #e8e8e8;
+.on {
+  color: #333;
 }
