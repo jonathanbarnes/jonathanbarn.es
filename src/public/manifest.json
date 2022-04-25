@@ -1,8 +1,0 @@
-{
-  "short_name": "jonathanbarn.es",
-  "name": "jonathanbarn.es",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#FFFFFF",
-  "background_color": "#ffffff"
-}
