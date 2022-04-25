@@ -32,6 +32,32 @@ export default function Home() {
 					place-content: center;
 					gap: 1ch;
 				}
+
+				h1 {
+					animation-name: wave;
+					animation-delay: 4s;
+					animation-duration: 4s;
+					animation-iteration-count: infinite;
+					transform-origin: 70% 70%;
+				}
+
+				@keyframes wave {
+					0% {
+						transform: rotate(0);
+					}
+					5% {
+						transform: rotate(-15deg);
+					}
+					10% {
+						transform: rotate(0deg);
+					}
+					15% {
+						transform: rotate(-15deg);
+					}
+					25% {
+						transform: rotate(0deg);
+					}
+				}
 			`}</style>
 			<main>
 				<h1>👋</h1>
