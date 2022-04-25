@@ -2,13 +2,14 @@ import Head from "next/head";
 
 export default function Home() {
 	return (
-		<div id="content">
+		<>
 			<Head>
 				<title>👋 jonathanbarn.es</title>
 			</Head>
 			<style jsx global>{`
 				html,
 				body {
+					height: 100%;
 					padding: 0;
 					margin: 0;
 					font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -20,8 +21,11 @@ export default function Home() {
 					box-sizing: border-box;
 				}
 
+				#__next {
+					height: 100%;
+				}
+
 				main {
-					min-height: 100vh;
 					height: 100%;
 					width: 100%;
 					display: grid;
@@ -32,6 +36,6 @@ export default function Home() {
 			<main>
 				<h1>👋</h1>
 			</main>
-		</div>
+		</>
 	);
 }
