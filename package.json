@@ -9,8 +9,5 @@
 		"next": "latest",
 		"react": "18.0.0",
 		"react-dom": "18.0.0"
-	},
-	"devDependencies": {
-		"@netlify/plugin-nextjs": "^4.4.3"
 	}
 }
