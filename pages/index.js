@@ -35,9 +35,8 @@ export default function Home() {
 
 				h1 {
 					animation-name: wave;
-					animation-delay: 4s;
+					animation-delay: 2s;
 					animation-duration: 4s;
-					animation-iteration-count: infinite;
 					transform-origin: 70% 70%;
 				}
 
@@ -54,7 +53,7 @@ export default function Home() {
 					15% {
 						transform: rotate(-15deg);
 					}
-					25% {
+					20% {
 						transform: rotate(0deg);
 					}
 				}
